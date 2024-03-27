@@ -24,14 +24,14 @@ export default function Rotas() {
   
   return (
     <NavigationContainer>
-      <Tab.Navigator  screenOptions={{ tabBarActiveTintColor: "#282626" , headerShown: false}}>
+      <Tab.Navigator  screenOptions={{ tabBarStyle: {backgroundColor: "black"}, tabBarActiveTintColor: "#282626" , headerShown: false , color:"black"}}>
         <Tab.Screen
           name="Explorar"
           component={Explorar}
           options={{
             tabBarLabel: '',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="magnify" color={color} size={size} />
+              <MaterialCommunityIcons name="magnify" color="white" size={size} />
             ),
           }} />
         <Tab.Screen
@@ -40,7 +40,7 @@ export default function Rotas() {
           options={{
             tabBarLabel: '',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="atom-variant" color={color} size={size} />
+              <MaterialCommunityIcons name="atom-variant" color="white" size={size} />
             ),
           }} />
           <Tab.Screen
@@ -49,7 +49,7 @@ export default function Rotas() {
           options={{
             tabBarLabel: '',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="atom-variant" color={color} size={size} />
+              <MaterialCommunityIcons name="atom-variant" color="white" size={size} />
             ),
           }} />
           <Tab.Screen
@@ -58,7 +58,7 @@ export default function Rotas() {
           options={{
             tabBarLabel: '',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="atom-variant" color={color} size={size} />
+              <MaterialCommunityIcons name="atom-variant" color="white" size={size} />
             ),
           }} />
       </Tab.Navigator>
