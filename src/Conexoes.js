@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function Conexoes() {
     return (
@@ -7,7 +8,8 @@ export default function Conexoes() {
             <Text style={css.texto}>Descubra o que seus amigos estão ouvindo!</Text>
         </View>
         <View style={css.caixa}>
-            <Text style={css.Imagem}>Imagem</Text>
+            <MaterialCommunityIcons name="account-circle-outline" style={css.icone}/>
+           
             <Text style={css.Nome}>Nome</Text>
             <Text style={css.icone}>icone</Text>
         </View>
@@ -40,7 +42,7 @@ export default function Conexoes() {
     );
   }
 const css = StyleSheet.create({
-    Imagem: {
+    icone: {
         color: 'white'
     }, Nome: {
         color: 'white'
@@ -55,10 +57,12 @@ const css = StyleSheet.create({
         display: "flex",
         justifyContent:"center",
         alignItems: "center",
-        marginBottom: 10
+        marginBottom: 10,
+
     }, texto: {
         color: 'white',
-        marginBottom: 30
-        
+        marginBottom: 50,
+        marginTop: 85,
+        fontWeight: "bold" 
     }
 })
