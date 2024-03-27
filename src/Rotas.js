@@ -24,7 +24,7 @@ export default function Rotas() {
   
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName="Explorar">
+      <Tab.Navigator  screenOptions={{ tabBarActiveTintColor: "#282626" , headerShown: false}}>
         <Tab.Screen
           name="Explorar"
           component={Explorar}
