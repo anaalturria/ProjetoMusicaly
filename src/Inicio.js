@@ -15,6 +15,8 @@ export default function Inicio(){
             <Image source={require("../assets/img/music.png")} style={css.img} ></Image>
             <Image source={require("../assets/img/music2.png")} style={css.img2} ></Image>
             <Text style={css.texto2}>Artistas Populares</Text>
+            <Image source={require("../assets/img/artista.png") } style={css.img3}></Image>
+            <Image source={require("../assets/img/artista2.png")} style={css.img4}></Image>
             <Text style={css.texto2}>Álbuns Populares</Text>
             <Text>Bem Vindo: {usuario} </Text>
         </View>
@@ -48,5 +50,17 @@ const css = StyleSheet.create({
         marginLeft:"50%",
         position:'absolute',
         top:80
+    },
+    img3:{
+        width:"50%",
+        height:"30%",
+        borderRadius:110
+    },
+    img4:{
+        width:"50%",
+        height:"30%",
+        borderRadius:110,
+        marginLeft:"50%",
+        
     }
   });
