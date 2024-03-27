@@ -1,46 +1,67 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Inicio from './Inicio';
+
+import React, { useContext, useEffect, useState } from 'react';
+import { UserContext } from './Context/UserContext';
+
+
+import Explorar from './Explorar';
+import Conexoes from './Conexoes';
+import Login from './Login';
 import Conta from './Conta';
-import UserProvider from './Context/UserContext';
+import Inicio from './Inicio';
 
 const Tab = createBottomTabNavigator();
 
+export default function Rotas() {
 
-export default function App() {
+  const { logado } = useContext(UserContext);
+
+  if (logado == false) {
+    return (<Login />)
+  }
+  
   return (
-    <UserProvider>
-      <NavigationContainer >
-    <Tab.Navigator >
-      <Tab.Screen options={{
-          tabBarLabel: 'Inicio',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
-          ),
-        }} name="Inicio" component={Inicio} />
-      <Tab.Screen  options={{
-          tabBarLabel: 'Conta',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account-heart" color={color} size={size} />
-          ),
-        }} 
-      
-      name="Conta" component={Conta} />
-    </Tab.Navigator>
-  </NavigationContainer>
-    </UserProvider>
-    
-  );
+    <NavigationContainer>
+      <Tab.Navigator initialRouteName="Explorar">
+        <Tab.Screen
+          name="Explorar"
+          component={Explorar}
+          options={{
+            tabBarLabel: '',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="magnify" color={color} size={size} />
+            ),
+          }} />
+        <Tab.Screen
+          name="Conexões"
+          component={Conexoes}
+          options={{
+            tabBarLabel: '',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="atom-variant" color={color} size={size} />
+            ),
+          }} />
+          <Tab.Screen
+          name="Conta"
+          component={Conta}
+          options={{
+            tabBarLabel: '',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="atom-variant" color={color} size={size} />
+            ),
+          }} />
+          <Tab.Screen
+          name="Inicio"
+          component={Inicio}
+          options={{
+            tabBarLabel: '',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="atom-variant" color={color} size={size} />
+            ),
+          }} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  )
 }
-
-const css = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#282626',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
