@@ -10,7 +10,7 @@ import Explorar from './Explorar';
 import Conexoes from './Conexoes';
 import Login from './Login';
 import Conta from './Conta';
-import Inicio from './Inicio';
+import Itens from './Itens';
 
 const Tab = createBottomTabNavigator();
 
@@ -53,8 +53,8 @@ export default function Rotas() {
             ),
           }} />
           <Tab.Screen
-          name="Inicio"
-          component={Inicio}
+          name="Itens"
+          component={Itens}
           options={{
             tabBarLabel: '',
             tabBarIcon: ({ color, size }) => (
