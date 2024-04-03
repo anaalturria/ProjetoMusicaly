@@ -40,7 +40,7 @@ export default function Rotas() {
           options={{
             tabBarLabel: '',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="atom-variant" color="white" size={size} />
+              <MaterialCommunityIcons name="ev-plug-type1" color="white" size={size} />
             ),
           }} />
           <Tab.Screen
@@ -49,7 +49,7 @@ export default function Rotas() {
           options={{
             tabBarLabel: '',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="atom-variant" color="white" size={size} />
+              <MaterialCommunityIcons name="account" color="white" size={size} />
             ),
           }} />
           <Tab.Screen
@@ -58,7 +58,7 @@ export default function Rotas() {
           options={{
             tabBarLabel: '',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="atom-variant" color="white" size={size} />
+              <MaterialCommunityIcons name="home-variant" color="white" size={size} />
             ),
           }} />
       </Tab.Navigator>
