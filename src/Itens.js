@@ -14,6 +14,7 @@ const dados = [
         id: "02",
         img: require("../assets/img/music2.png")
     },
+    
     {
         id:"03",
         texto:"Artistas Populares",
@@ -31,14 +32,14 @@ const dados = [
     },
     {
         id:"06",
-        img: require("../assets/img/album2.png")
+        img: require("../assets/img/album2.png"),
     },
     
 ]
 
 export default function Itens({navigation})
 {
-    const {usuario} = useContext (UserContext);
+
 
     return(
         <>
@@ -70,7 +71,7 @@ const css = StyleSheet.create({
     container: {
         backgroundColor: "black",
         width: "100%",
-        height: "100%",  
+          
     },
     usuario: {
     }
