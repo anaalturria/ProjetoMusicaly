@@ -15,7 +15,7 @@ export default function Inicio({img,texto}) {
 const css = StyleSheet.create({
     geral: {
         backgroundColor:"black",
-        padding: 10,
+        padding: 7,
         height: 300,
         margin: 20,
         width: "40%", 

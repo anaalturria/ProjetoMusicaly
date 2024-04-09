@@ -43,7 +43,7 @@ export default function Itens({navigation})
     return(
         <>
         <View style={css.geral}>
-        <Text style={css.usuario}>Olá {usuario}, bem-vinda de volta!</Text>
+        
         <FlatList 
         data={dados} 
         renderItem={ ({item}) => 
