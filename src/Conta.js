@@ -1,12 +1,17 @@
 
-import { useState } from "react";
+import { useBatteryLevel } from "expo-battery";
+import { useEffect, useState } from "react";
 import { Image, StyleSheet, Text, View, Switch } from "react-native";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default function Conta(){
+export default function Conta ()  {
+
+   
 
     const [ativado, setAtivado ] = useState( false );
     const [cor, setCor ] = useState("white");
+
+    
 
     function CliqueSwitch()
     {
@@ -21,8 +26,8 @@ export default function Conta(){
 
     return(
         <View style={{ flex: 1, backgroundColor: cor }}>
-
-                <Switch 
+    
+             <Switch 
                     trackColor={{false: 'lightgray', true: 'lightgray'}}
                     thumbColor={ativado ? 'blue' : 'gray'}
                     ios_backgroundColor="#3e3e3e"
@@ -141,6 +146,8 @@ export default function Conta(){
             </View> 
             
             </View>
+            
+            
         </View>
 
     )

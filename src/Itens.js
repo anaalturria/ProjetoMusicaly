@@ -70,9 +70,6 @@ const css = StyleSheet.create({
    
     container: {
         backgroundColor: "black",
-        width: "100%",
-          
-    },
-    usuario: {
+        width: "100%",  
     }
   }); 

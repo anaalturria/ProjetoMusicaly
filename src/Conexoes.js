@@ -45,7 +45,7 @@ export default function Conexoes() {
         <View style={css.caixa}>
             <View style={css.Textealinha}>
                 <MaterialCommunityIcons name="account-circle-outline" style={css.icone}/>
-                <Text style={css.Nome}>pedroloco</Text>
+                <Text style={css.Nome}>pedrolindo</Text>
                 <MaterialCommunityIcons name="account-plus" style={css.iconedois}/>
             </View>
         </View>

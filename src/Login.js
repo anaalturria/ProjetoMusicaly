@@ -33,7 +33,7 @@ export default function Login() {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#471AA2',
+      backgroundColor: '#282626',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
       marginBottom: 15,
     },
     btn: {
-      backgroundColor: "#7D7BFA",
+      backgroundColor: "white",
+      color:"black",
       width: "90%",
       height: 60,
       borderRadius: 5
