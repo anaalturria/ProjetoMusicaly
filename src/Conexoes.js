@@ -1,54 +1,47 @@
+import { useContext, useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import * as Contacts from 'expo-contacts';
+import { UserContext } from "./Context/UserContext";
 
 export default function Conexoes() {
+
+    const [ contatos, setContatos ] = useState([]);
+
+    async function getConexoes()
+    {
+        const { status } = await Contacts.requestPermissionsAsync();
+        if (status === 'granted') {
+          const { data } = await Contacts.getContactsAsync({
+            fields: [Contacts.Fields.FirstName],
+          });
+          setContatos(data);
+    }
+}
+useEffect(() => {
+    getConexoes();
+}, [] );
+
+const {cor, controle, setControle, toogleSwitch } = useContext (UserContext);
+
     return (
-      <View style={{backgroundColor: '#282626', flex: 1, alignItems: "center"}}>
+      <View style={{backgroundColor: cor, flex: 1, alignItems: "center"}}>
         <View>
             <Text style={css.texto}>Descubra o que seus amigos estão ouvindo!</Text>
         </View>
-        <View style={css.caixa}>
-            <View style={css.Textealinha}>
-                <MaterialCommunityIcons name="account-circle-outline" style={css.icone}/>
-                <Text style={css.Nome}>analturria</Text>
-                <MaterialCommunityIcons name="account-plus" style={css.iconedois}/>
-            </View>
+        <View style={{ flex: 1, flexDirection: 'column' }}>
+        {contatos.map((contact) => (
+          <View key={contact.recordID} style={css.caixaindividual}>
+                <View style={css.Textealinha}>
+                    <MaterialCommunityIcons name="account-circle-outline" style={css.icone}/>
+                    <Text style={css.Nome}>{contact.firstName}</Text> 
+                    <MaterialCommunityIcons name="account-plus" style={css.iconedois}/>
+                </View>
+          </View>
+
+            ))}
         </View>
-        <View style={css.caixa}>
-            <View style={css.Textealinha}>
-                <MaterialCommunityIcons name="account-circle-outline" style={css.icone}/>
-                <Text style={css.Nome}>anaprrx___</Text>
-                <MaterialCommunityIcons name="account-plus" style={css.iconedois}/>
-            </View>
-        </View>
-        <View style={css.caixa}>
-            <View style={css.Textealinha}>
-                <MaterialCommunityIcons name="account-circle-outline" style={css.icone}/>
-                <Text style={css.Nome}>anagreatti</Text>
-                <MaterialCommunityIcons name="account-plus" style={css.iconedois}/>
-            </View>
-        </View>
-        <View style={css.caixa}>
-            <View style={css.Textealinha}>
-                <MaterialCommunityIcons name="account-circle-outline" style={css.icone}/>
-                <Text style={css.Nome}>julianisilva</Text>
-                <MaterialCommunityIcons name="account-plus" style={css.iconedois}/>
-            </View>
-        </View>
-        <View style={css.caixa}>
-            <View style={css.Textealinha}>
-                <MaterialCommunityIcons name="account-circle-outline" style={css.icone}/>
-                <Text style={css.Nome}>caua.m33</Text>
-                <MaterialCommunityIcons name="account-plus" style={css.iconedois}/>
-            </View>
-        </View>
-        <View style={css.caixa}>
-            <View style={css.Textealinha}>
-                <MaterialCommunityIcons name="account-circle-outline" style={css.icone}/>
-                <Text style={css.Nome}>pedroloco</Text>
-                <MaterialCommunityIcons name="account-plus" style={css.iconedois}/>
-            </View>
-        </View>
+        
         </View>
     );
   }
@@ -66,17 +59,18 @@ const css = StyleSheet.create({
     }, Nome: {
         color: 'white',
 
-    },  caixa: {
-        width: "85%",
+
+    },  caixaindividual: {
+        width: "95%",
         height: 80,
         backgroundColor: "#4B4B4B",
-        margin: 5,
         borderRadius: 5,
         justifyContent:"center",
-        alignItems: "center",
-        marginBottom: 10,
         flexDirection: 'column',
         alignItems: 'center',
+        marginTop: 30,
+        borderBottomColor: 'white',
+        borderColor: 'white'
         
     }, texto: {
         color: 'white',
@@ -86,6 +80,7 @@ const css = StyleSheet.create({
     }, Textealinha: {
         flexDirection: 'row', 
         alignItems: 'center',
-        
+        marginBottom: 40,
+        borderBottomColor: 'white',
     }
 })

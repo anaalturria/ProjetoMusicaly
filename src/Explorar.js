@@ -8,8 +8,10 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 export default function Explorar() {
   const {usuario} = useContext (UserContext);
 
+  const {cor, controle, setControle, toogleSwitch } = useContext (UserContext);
+
     return (
-      <View style={{backgroundColor: '#282626', flex: 1}}>
+      <View  style={{backgroundColor: cor, flex: 1}}>
         <View style={css.Textealinha}>
         <TextInput style={css.input}>busca</TextInput>
         <MaterialCommunityIcons name="magnify" style={css.icone}/>

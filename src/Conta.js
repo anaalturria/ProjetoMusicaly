@@ -1,34 +1,24 @@
 
-import { useState } from "react";
-import { Image, StyleSheet, Text, View, Switch } from "react-native";
+import { useContext, useState } from "react";
+import { Image, StyleSheet, Text, View, Switch, Button } from "react-native";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { UserContext } from "./Context/UserContext";
+
+
 
 export default function Conta(){
 
-    const [ativado, setAtivado ] = useState( false );
-    const [cor, setCor ] = useState("white");
-
-    function CliqueSwitch()
-    {
-      setAtivado(!ativado); 
-      if (!ativado){
-        setCor('#282626');
-      } else {
-        setCor('white');
-      }
-
-    }
+    const {cor, controle, setControle, toogleSwitch } = useContext (UserContext);
 
     return(
         <View style={{ flex: 1, backgroundColor: cor }}>
-
-                <Switch 
-                    trackColor={{false: 'lightgray', true: 'lightgray'}}
-                    thumbColor={ativado ? 'blue' : 'gray'}
-                    ios_backgroundColor="#3e3e3e"
-                    onValueChange={CliqueSwitch}
-                    value={ativado} >
-                    </Switch>
+            <Switch 
+                trackColor={{false: 'lightgray', true: 'lightgray'}}
+                thumbColor={controle ? 'blue' : 'gray'}
+                ios_backgroundColor="#3e3e3e"
+                onValueChange={ () => toogleSwitch() }
+                value={controle}
+            ></Switch>
             <View>
                 <View style={css.caixaperfil}>
                     <View style={css.Textealinhareto}>

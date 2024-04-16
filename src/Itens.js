@@ -39,6 +39,7 @@ const dados = [
 export default function Itens({navigation})
 {
     const {usuario} = useContext (UserContext);
+   
 
     return(
         <>
@@ -70,7 +71,7 @@ const css = StyleSheet.create({
     container: {
         backgroundColor: "black",
         width: "100%",
-        height: "100%",  
+ 
     },
     usuario: {
     }
