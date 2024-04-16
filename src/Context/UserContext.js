@@ -10,6 +10,7 @@ function UserProvider({ children }) {
   const [logado, setLogado] = useState(false);
   const [cor, setCor ] = useState("white");
   const [controle, setControle] = useState(false);
+ 
 
   function toogleSwitch(){
     setControle( !controle );

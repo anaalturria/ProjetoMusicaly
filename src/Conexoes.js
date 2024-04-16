@@ -27,7 +27,9 @@ const {cor, controle, setControle, toogleSwitch } = useContext (UserContext);
     return (
       <View style={{backgroundColor: cor, flex: 1, alignItems: "center"}}>
         <View>
-            <Text style={css.texto}>Descubra o que seus amigos estão ouvindo!</Text>
+            <Text style={{color: controle ? 'white' : 'black', marginBottom: 50,
+        marginTop: 80,
+        fontWeight: "bold"}}>Descubra o que seus amigos estão ouvindo!</Text>
         </View>
         
         <View style={{ flex: 1, flexDirection: 'column' }}>
@@ -74,11 +76,6 @@ const css = StyleSheet.create({
         borderBottomColor: 'white',
         borderColor: 'white'
         
-    }, texto: {
-        color: 'white',
-        marginBottom: 50,
-        marginTop: 85,
-        fontWeight: "bold" 
     }, Textealinha: {
         flexDirection: 'row', 
         alignItems: 'center',
