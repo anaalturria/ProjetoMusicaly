@@ -11,6 +11,7 @@ import Conexoes from './Conexoes';
 import Login from './Login';
 import Conta from './Conta';
 import Itens from './Itens';
+import Localizacao from './Localizacao';
 
 const Tab = createBottomTabNavigator();
 
@@ -59,6 +60,15 @@ export default function Rotas() {
             tabBarLabel: '',
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="home-variant" color="white" size={size} />
+            ),
+          }} />
+          <Tab.Screen
+          name="Localizacao"
+          component={Localizacao}
+          options={{
+            tabBarLabel: '',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="airplane-marker" color="white" size={size} />
             ),
           }} />
           
