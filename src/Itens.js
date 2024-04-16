@@ -40,10 +40,11 @@ const dados = [
 export default function Itens({navigation})
 {
 
-
+    const {cor, controle, setControle, toogleSwitch } = useContext (UserContext);
     return(
         <>
-        <View style={css.geral}>
+        <View style={{backgroundColor: cor,
+        width: "100%",}}>
         
         <FlatList 
         data={dados} 
@@ -68,8 +69,5 @@ export default function Itens({navigation})
 
 const css = StyleSheet.create({
    
-    container: {
-        backgroundColor: "black",
-        width: "100%",  
-    }
+    
   }); 

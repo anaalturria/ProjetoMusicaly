@@ -14,21 +14,22 @@ export default function Explorar() {
       <View  style={{backgroundColor: cor, flex: 1}}>
         <View style={css.Textealinha}>
         <TextInput style={css.input}>busca</TextInput>
-        <MaterialCommunityIcons name="magnify" style={css.icone}/>
+        <MaterialCommunityIcons name="magnify" style={{color: controle ? 'white' : 'black',
+          marginRight: 80,
+          fontSize: 40,
+          marginLeft: 20,
+          marginTop: 25}}/>
         </View>
-        <Text style={css.textoexp}>Encontre suas musicas.</Text>
+        <Text style={{color: controle ? 'white' : 'black', textAlign:"center",
+        marginTop: 230,
+        fontWeight: "bold",
+        fontSize: 15}}>Encontre suas musicas.</Text>
       </View>
     );
   }
 
   const css = StyleSheet.create({
-    textoexp: {
-        color: 'white',
-        textAlign:"center",
-        marginTop: 230,
-        fontWeight: "bold",
-        fontSize: 15
-    },  input: {
+    input: {
           width: "75%", 
           height: 55,
           borderWidth: 1,
@@ -41,12 +42,6 @@ export default function Explorar() {
           backgroundColor: "#4B4B4B",
           color: "#868686",
           borderColor: "#4B4B4B"
-    }, icone: {
-          color: 'white',
-          marginRight: 80,
-          fontSize: 40,
-          marginLeft: 20,
-          marginTop: 25
     }, Textealinha: {
           flexDirection: 'row', 
           alignItems: 'center',
