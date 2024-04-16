@@ -61,6 +61,8 @@ export default function Rotas() {
               <MaterialCommunityIcons name="home-variant" color="white" size={size} />
             ),
           }} />
+          
+          
       </Tab.Navigator>
     </NavigationContainer>
   )

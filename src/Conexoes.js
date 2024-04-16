@@ -29,6 +29,7 @@ const {cor, controle, setControle, toogleSwitch } = useContext (UserContext);
         <View>
             <Text style={css.texto}>Descubra o que seus amigos estão ouvindo!</Text>
         </View>
+        
         <View style={{ flex: 1, flexDirection: 'column' }}>
         {contatos.map((contact) => (
           <View key={contact.recordID} style={css.caixaindividual}>
@@ -40,6 +41,7 @@ const {cor, controle, setControle, toogleSwitch } = useContext (UserContext);
           </View>
 
             ))}
+
         </View>
         
         </View>
